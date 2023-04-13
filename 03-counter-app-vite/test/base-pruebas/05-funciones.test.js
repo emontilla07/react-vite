@@ -11,8 +11,19 @@ describe('Pruebas en 05-funciones', () => {
     });
 
     test('getUsuarioActivo debe de retornar un objeto', () => {
+        // const name = 'Eric';
+        // const testUserActive = {
+        //     uid: 'ABC567',
+        //     username: name,
+        // };
+        // const activeUser = getUsuarioActivo(name)
+        // expect(testUserActive).toStrictEqual(activeUser);
+
         const name = 'Eric';
-        const newName = getUsuarioActivo(name);
-        
+        const activeUser = getUsuarioActivo(name);
+        expect(activeUser).toStrictEqual({
+            uid: 'ABC567',
+            username: name
+        });
     });
 });
