@@ -1,6 +1,6 @@
-const jestConfig = {
+const config = {
     testEnvironment: 'jest-environment-jsdom',
-    setupFiles: ['./jest.setup.js'],
-};
+    setupFiles: [ './jest.setup.js' ]
+}
 
-export default jestConfig;
+export default config;
