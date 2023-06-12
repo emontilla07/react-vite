@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useCounter = ( initialValue = 10 ) => {
+export const useCounter = ( initialValue = 0 ) => {
     const [ counter, setCounter ] = useState( initialValue );
 
     // Formas de exponer el setCounter desde un custom hook
