@@ -1,8 +1,7 @@
-import { useFetch } from '../hooks/useFetch';
-import { useCounter } from '../hooks/useCounter';
+import { useCounter, useFetch } from '../hooks';
 
 export const MultipleCustomHooks = () => {
-    const { counter, increment } = useCounter( 1 );
+    const { counter, increment, decrement } = useCounter( 1 );
     // eslint-disable-next-line no-unused-vars
     const { data, isLoading, hasError } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${ counter }`);
     const { author, quote } = !!data && data[0];
@@ -28,6 +27,8 @@ export const MultipleCustomHooks = () => {
                         </blockquote>
                     )
             }
+
+            <button className="btn btn-primary mt-5 mr-2" onClick={ () => decrement() } disabled={ isLoading }>Back quote</button>
             <button className="btn btn-primary mt-5" onClick={ () => increment() } disabled={ isLoading }>Next quote</button>
         </>
     )
