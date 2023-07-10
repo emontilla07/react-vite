@@ -6,12 +6,12 @@ export const useCounter = ( initialValue = 0 ) => {
     // Formas de exponer el setCounter desde un custom hook
     // Para incrementar o decrementar se pasa un parametro con valor a las funciones
     const increment = ( value = 1 ) => {
-        setCounter( counter + value );
+        setCounter( current => current + value );
     }
 
     const decrement = ( value = 1 ) => {
         if ( counter === 0 ) return;
-        setCounter( counter - value );
+        setCounter( current => current - value );
     }
 
     const reset = () => {
